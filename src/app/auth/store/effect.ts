@@ -1,12 +1,12 @@
 import { inject } from '@angular/core'
 import { Actions, createEffect, ofType } from '@ngrx/effects'
 import { AuthService } from '../services/auth.service'
-import { authActions } from './action'
 import { catchError, map, of, switchMap, tap } from 'rxjs'
 import { CurrentUserInterface } from '../../shared/types/currentUser.interface'
 import { HttpErrorResponse } from '@angular/common/http'
 import { PersistanceService } from '../../shared/services/persistence.service'
 import { Router } from '@angular/router'
+import { authActions } from './actions'
 
 export const registerEffect= createEffect(
     (
