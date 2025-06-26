@@ -3,13 +3,17 @@
         <div class="container page">
             <div class="row">
                 <div class="col-md-6 offset-md-3 col-xs-12">
-                    <h1 class="text-xs-center">Sign In</h1>
+                    <h1 class="text-xs-center">Sign Up</h1>
                     <p class="text-xs-center">
-                        <a routerLink="/login">Need an account?</a>
+                        <a routerLink="/login">Have an account?</a>
                     </p>
                     BACKEND ERRORS HERE
-                    <mc-backend-error-messages *ngIf="data.backendError" [backendErrors]="data.backendError"></mc-backend-error-messages>
+                    <mc-backend-error-messages *ngIf="data.backendError" [backendErrors] = "data.backendError"></mc-backend-error-messages>
                     <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <fieldset class="form-group">
+                            <input type="text" class="form-control form-control-lg" placeholder="Username"
+                                formControlName="username" />
+                        </fieldset>
                         <fieldset class="form-group">
                             <input type="text" class="form-control form-control-lg" placeholder="Email"
                                 formControlName="email" />
